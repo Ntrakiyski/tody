@@ -9,7 +9,7 @@ export const Header = ({ logoSrc = '/assets/logo.svg', navItems = [] }) => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logoSrc} alt="Gloria Rusenova" className="h-10 w-auto" />
+          <img src={logoSrc} alt="Gloria Rusenova" className="h-10 w-auto object-contain" />
         </Link>
 
         {/* Desktop Navigation */}
