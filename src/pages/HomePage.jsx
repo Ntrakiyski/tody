@@ -2,12 +2,7 @@ import React from 'react';
 import {
   Header,
   PrimaryButton,
-  LogoGrid,
-  Card,
-  ProjectCard,
-  CTAContainer,
-  ServiceCard,
-  Footer
+  LogoGrid
 } from '../design_system/components';
 
 const navItems = [
@@ -167,6 +162,82 @@ const footerData = {
   copyright: '© 2025 Gloria Rusenova. All rights reserved.',
 };
 
+const NewFooter = () => (
+  <footer className="bg-[#1C1514] text-gray-400">
+    <div className="container mx-auto px-8 py-12">
+      <div className="flex flex-col md:flex-row justify-between gap-12 mb-12">
+        {/* Left Side: Logo and Copyright */}
+        <div className="md:w-1/3">
+          <img src="/assets/fractals-logo.png" alt="Fractals Logo" className="h-10 mb-4" />
+          <p className="text-sm leading-relaxed">Design amazing digital experiences that create more happy in the world.</p>
+        </div>
+        {/* Right Side: Links */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 md:w-2/3">
+          {/* Column 1 - Product */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Product</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Overview</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Solutions</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Tutorials</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
+            </ul>
+          </div>
+          {/* Column 2 - Company */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Company</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">About us</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">News</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          {/* Column 3 - Resources */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Resources</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Newsletter</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Events</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Help centre</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Support</a></li>
+            </ul>
+          </div>
+          {/* Column 4 - Legal */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Legal</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Cookies</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Licenses</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Settings</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/* Bottom Bar: Copyright and Socials */}
+      <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p className="text-sm">&copy; 2025 Fractals. All rights reserved.</p>
+        <div className="flex space-x-4">
+          <a href="https://twitter.com" className="hover:text-white transition-colors">
+            <img src="/assets/twitter.svg" alt="Twitter" className="w-5 h-5" />
+          </a>
+          <a href="https://linkedin.com" className="hover:text-white transition-colors">
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://github.com" className="hover:text-white transition-colors">
+            <img src="/assets/github.svg" alt="GitHub" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+);
+
 export const HomePage = () => (
   <main className="font-inter">
     {/* Hero Section */}
@@ -179,46 +250,36 @@ export const HomePage = () => (
           { label: 'Sign up', variant: 'primary' }
         ]}
       />
-      <div className="relative z-10 container mx-auto px-8 py-20 flex flex-col lg:flex-row items-center justify-between">
+      <div className="relative z-10 container mx-auto px-8 py-20 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="lg:w-1/2 text-center lg:text-left">
-          <h1 className="font-bricolage text-6xl lg:text-8xl font-bold mb-4 leading-tight">Smart systems build for real people</h1>
-          <h2 className="font-bricolage text-2xl font-bold mb-6 text-[#F0633F]">HUMAN & AI</h2>
-          <p className="font-bricolage text-xl mb-8 text-gray-300">Where Product Design meets AI & Machine Learning</p>
+          <h1 className="font-bricolage text-4xl md:text-6xl lg:text-8xl font-bold mb-6 leading-tight">Smart systems build for real people</h1>
+          <p className="font-bricolage text-lg md:text-xl mb-8 text-gray-300">Where Product Design meets AI & Machine Learning</p>
           <PrimaryButton label="Book free call" size="xl" />
         </div>
         <div className="lg:w-1/2 mt-8 lg:mt-0">
-          <img src="/assets/hero-image.png" alt="Hero" className="w-full h-auto rounded-tl-[40px]" />
+          <img src="/assets/new-hero-graphic.png" alt="Smart systems for real people" className="w-full h-auto" onError={(e) => { e.target.src = '/assets/hero-image.png'; }} />
         </div>
-      </div>
-      <div className="absolute inset-0">
-        <img src="/assets/circle.svg" alt="" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1607px] h-[1607px] opacity-20" /> {/* Placeholder for circle */}
       </div>
     </section>
 
     {/* Social Proof */}
-    <section className="py-12 bg-[#F7F4ED]">
+    <section className="py-12 bg-[#1C1514]">
       <div className="container mx-auto px-8">
-        <h2 className="text-center text-xl font-medium mb-6 text-gray-600">Tech we work with</h2>
+        <h2 className="text-center text-xl font-medium mb-6 text-gray-400">Tech we work with</h2>
         <LogoGrid logos={logoList} />
       </div>
     </section>
 
     {/* Features Section */}
     <section className="relative bg-[#1C1514] text-white py-24 overflow-hidden">
-      <div className="absolute inset-0">
-        <img src="/assets/circle.svg" alt="" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1607px] h-[1607px] opacity-20" />
-      </div>
       <div className="relative z-10 container mx-auto px-8">
         <div className="text-center mb-16">
-          <h2 className="font-bricolage text-4xl lg:text-5xl font-semibold mb-4">Building intelligence into your product</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">ML systems that work technically and experiences that work for humans—because you need both.</p>
+          <h2 className="font-bricolage text-3xl lg:text-5xl font-semibold mb-4">Building intelligence into your product</h2>
+          <p className="text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto">ML systems that work technically and experiences that work for humans—because you need both.</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, i) => (
             <div key={i} className="bg-[#2B2A2A] rounded-xl p-6 text-center">
-              <div className="w-18 h-18 mx-auto mb-4 bg-gray-800 rounded-full flex items-center justify-center">
-                <img src={feature.animationSrc} alt={feature.title} className="w-12 h-12" />
-              </div>
               <h3 className="font-bricolage text-xl font-bold mb-2">{feature.title}</h3>
               <p className="text-gray-400 text-sm">{feature.description}</p>
             </div>
@@ -228,27 +289,23 @@ export const HomePage = () => (
     </section>
 
     {/* ML & AI Blog */}
-    <section className="py-24 bg-[#F7F4ED]">
+    <section className="py-24 bg-[#1C1514]">
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
-          <h2 className="font-bricolage text-3xl lg:text-4xl font-semibold mb-4 text-[#101828]">Machine Learning & AI</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Hands-on experimentation with fraud detection, retrieval systems, and autonomous agents.</p>
+          <h2 className="font-bricolage text-3xl lg:text-4xl font-semibold mb-4 text-white">Machine Learning & AI</h2>
+          <p className="text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto">Hands-on experimentation with fraud detection, retrieval systems, and autonomous agents.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {mlBlogPosts.map((post, i) => (
-            <div key={i} className="bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="bg-[#1C1514] relative h-96">
-                <img src={post.imageSrc} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+            <div key={i} className="bg-[#2B2A2A] rounded-lg overflow-hidden">
+              <div className="relative h-64 p-6 flex flex-col justify-between bg-no-repeat bg-center bg-cover" style={{backgroundImage: `url('${post.imageSrc}')`}}>
                 {post.stats.map((stat, j) => (
-                  <p key={j} className="absolute top-4 left-4 bg-white text-black px-2 py-1 rounded text-sm font-bold">{stat}</p>
+                  <p key={j} className="font-bricolage text-2xl font-bold text-white">{stat}</p>
                 ))}
               </div>
               <div className="p-6">
-                <div className="flex items-center mb-2">
-                  <div className="w-6 h-6 bg-green-500 rounded-full mr-2"></div> {/* Icon placeholder */}
-                  <h3 className="font-bricolage text-lg font-semibold text-[#101828]">{post.title}</h3>
-                </div>
-                <p className="text-gray-600">{post.description}</p>
+                <h3 className="font-bricolage text-lg font-semibold text-white mb-2">{post.title}</h3>
+                <p className="text-gray-400">{post.description}</p>
               </div>
             </div>
           ))}
@@ -258,48 +315,41 @@ export const HomePage = () => (
 
     {/* One Person Team */}
     <section className="py-24 bg-[#1C1514] text-white">
-      <div className="container mx-auto px-8 max-w-4xl">
-        <div className="text-center mb-8">
-          <p className="font-bricolage text-lg mb-2">for now</p>
+      <div className="container mx-auto px-8">
+        <div className="text-center mb-12">
+          <p className="font-bricolage text-lg mb-2 text-gray-400">for now</p>
           <h2 className="font-bricolage text-3xl lg:text-4xl font-semibold">One person team</h2>
         </div>
-        <div className="bg-[#F7F4ED] rounded-2xl p-8 text-[#1C1514]">
-          <h3 className="font-bricolage text-2xl font-semibold mb-6">I&#x27;m Gloria</h3>
-          <p className="text-lg mb-8 leading-relaxed">{aboutText}</p>
-          <div className="space-y-4">
-            <div className="flex items-start">
-              <div className="w-6 h-6 bg-green-500 rounded-full mr-4 mt-1 flex-shrink-0"></div>
-              <span className="text-lg">Check item 1</span>
-            </div>
-            {/* Add more check items as needed */}
+        <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+          <div className="md:w-1/2">
+            <h3 className="font-bricolage text-2xl font-semibold mb-6">I'm Gloria</h3>
+            <p className="text-lg leading-relaxed text-gray-300">{aboutText}</p>
+          </div>
+          <div className="md:w-1/2">
+            <img src="/assets/gloria-photo.jpg" alt="Gloria" className="rounded-lg w-full h-auto" onError={(e) => { e.target.style.display = 'none'; }} />
           </div>
         </div>
-        <img src="/assets/about-image.svg" alt="About" className="mt-8 mx-auto w-full max-w-md" /> {/* Placeholder */}
       </div>
     </section>
 
     {/* Product Design */}
-    <section className="py-24 bg-[#F7F4ED]">
+    <section className="py-24 bg-[#1C1514]">
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
-          <h2 className="font-bricolage text-3xl lg:text-4xl font-semibold mb-4 text-[#101828]">Product Design</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">This is my working experience company wide with just a few selected projects</p>
+          <h2 className="font-bricolage text-3xl lg:text-4xl font-semibold mb-4 text-white">Product Design</h2>
+          <p className="text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto">This is my working experience company wide with just a few selected projects</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {productDesignPosts.map((post, i) => (
-            <div key={i} className="bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="bg-[#1C1514] relative h-96">
-                <img src={post.imageSrc} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+            <div key={i} className="bg-[#2B2A2A] rounded-lg overflow-hidden">
+              <div className="relative h-64 p-6 flex flex-col justify-between bg-no-repeat bg-center bg-cover" style={{backgroundImage: `url('${post.imageSrc}')`}}>
                 {post.stats.map((stat, j) => (
-                  <p key={j} className={`absolute ${j === 0 ? 'top-4 left-4' : 'bottom-4 left-4'} bg-white text-black px-2 py-1 rounded text-sm font-bold`}>{stat}</p>
+                  <p key={j} className="font-bricolage text-2xl font-bold text-white">{stat}</p>
                 ))}
               </div>
               <div className="p-6">
-                <div className="flex items-center mb-2">
-                  <div className="w-6 h-6 bg-blue-500 rounded-full mr-2"></div>
-                  <h3 className="font-bricolage text-lg font-semibold text-[#101828]">{post.title}</h3>
-                </div>
-                <p className="text-gray-600">{post.description}</p>
+                <h3 className="font-bricolage text-lg font-semibold text-white mb-2">{post.title}</h3>
+                <p className="text-gray-400">{post.description}</p>
               </div>
             </div>
           ))}
@@ -310,11 +360,11 @@ export const HomePage = () => (
     {/* CTA Section */}
     <section className="py-24 bg-[#1C1514] text-white relative overflow-hidden">
       <div className="container mx-auto px-8">
-        <div className="bg-[#212121] rounded-3xl p-16 flex flex-col lg:flex-row items-center justify-between shadow-2xl max-w-6xl mx-auto">
-          <div className="lg:w-1/2 mb-8 lg:mb-0">
-            <h2 className="font-bricolage text-3xl lg:text-4xl font-semibold mb-4">Interested in My Approach to ML Problem-Solving?</h2>
-            <p className="text-xl mb-8 text-gray-300">I&#x27;m currently seeking opportunities in:</p>
-            <div className="grid grid-cols-2 gap-4">
+        <div className="bg-[#212121] rounded-3xl p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between shadow-2xl max-w-6xl mx-auto gap-8">
+          <div className="lg:w-1/2">
+            <h2 className="font-bricolage text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Interested in My Approach to ML Problem-Solving?</h2>
+            <p className="text-lg md:text-xl mb-8 text-gray-300">I'm currently seeking opportunities in:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {interests.map((interest, i) => (
                 <div key={i} className="bg-white/20 backdrop-blur-sm rounded-xl px-6 py-3 text-center font-bold">
                   {interest}
@@ -323,25 +373,13 @@ export const HomePage = () => (
             </div>
           </div>
           <div className="lg:w-1/2">
-            <img src="/assets/cta-image.png" alt="CTA" className="w-full h-80 object-cover rounded-2xl" /> {/* Placeholder */}
+            <img src="/assets/new-cta-graphic.png" alt="CTA" className="w-full h-auto object-cover rounded-2xl" onError={(e) => { e.target.src = '/assets/hero-image.png'; }} />
           </div>
         </div>
       </div>
     </section>
 
-    {/* Contact Buttons */}
-    <section className="py-12 bg-[#F7F4ED]">
-      <div className="container mx-auto px-8 flex flex-wrap justify-center gap-4">
-        {contactButtons.map((btn, i) => (
-          <a key={i} href={btn.href} className="bg-white text-[#155DFC] px-8 py-3 rounded-xl font-bold flex items-center gap-2 shadow-md hover:shadow-lg transition">
-            <img src={btn.icon} alt={btn.label} className="w-5 h-5" />
-            {btn.label}
-          </a>
-        ))}
-      </div>
-    </section>
-
     {/* Footer */}
-    <Footer {...footerData} />
+    <NewFooter />
   </main>
 );
