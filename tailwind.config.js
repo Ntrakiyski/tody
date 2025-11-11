@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  // Note: Tailwind v4 uses @source directive in CSS instead of content array
   theme: {
     extend: {
       colors: {
@@ -44,4 +41,3 @@ export default {
   },
   plugins: [],
 }
-
